@@ -363,6 +363,59 @@
 
 </div>
 
+<h2 class="section-title">AI Mock Interview Simulator</h2>
+
+  <div class="interview-box">
+    <div class="question">
+      <h3>Start Executive Mock Interview</h3>
+      <div class="answer" style="display:block;">
+        Practice Associate Director level interview scenarios including Service Desk Operations, Active Directory Governance, Client Engagement, ITIL, Leadership, and Executive Communication.
+      </div>
+
+      <button id="startInterview" style="margin-top:15px;padding:12px 18px;border:none;border-radius:10px;background:#38bdf8;font-weight:600;cursor:pointer;">
+        Start Mock Interview
+      </button>
+
+      <div id="mockQuestion" style="margin-top:20px;font-size:1.1rem;color:#7dd3fc;"></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Executive Readiness Dashboard</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>Interview Readiness</h2>
+      <ul>
+        <li>Technical Governance Preparedness</li>
+        <li>Leadership Communication Readiness</li>
+        <li>Client Escalation Management</li>
+        <li>Operational Governance Knowledge</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Transformation & Automation</h2>
+      <ul>
+        <li>AI Service Desk Initiatives</li>
+        <li>Chatbot Integration</li>
+        <li>Self-Service Portals</li>
+        <li>Shift-Left Strategy</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Leadership Focus Areas</h2>
+      <ul>
+        <li>Executive Presence</li>
+        <li>Stakeholder Governance</li>
+        <li>People Leadership</li>
+        <li>Business Impact Communication</li>
+      </ul>
+    </div>
+
+  </div>
+
 <footer>
   Built for Executive-Level Service Desk & Client Engagement Interview Preparation | Infosys Associate Director Readiness Portal
 </footer>
@@ -422,6 +475,21 @@
     document.querySelector('.container').prepend(toggleBtn);
 
     let darkMode = true;
+
+    const interviewQuestions = [
+      'How would you handle a global P1 outage impacting 20,000 users?',
+      'Explain your approach to SLA governance and escalation management.',
+      'How do you improve CSAT in service desk operations?',
+      'Describe a difficult executive stakeholder situation you managed.',
+      'How would you drive automation in a global support organization?',
+      'Explain how you manage ticket backlog and aging tickets.',
+      'Describe your leadership style while managing large global teams.'
+    ];
+
+    document.getElementById('startInterview').addEventListener('click', () => {
+      const randomQuestion = interviewQuestions[Math.floor(Math.random() * interviewQuestions.length)];
+      document.getElementById('mockQuestion').innerText = randomQuestion;
+    });
 
     toggleBtn.addEventListener('click', () => {
       darkMode = !darkMode;
